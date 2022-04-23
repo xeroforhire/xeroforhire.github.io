@@ -1,80 +1,33 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Audio Uploads (Very Late) Monday Nights.">
+    <meta name="description" content="The Xero Hour is a Culture-War Podcast about Politics, Music, and Theology from an irreverent Christian perspective. Uploads (Very Late) Monday Nights.">
     <title>The Xero Hour Podcast</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
-        body {
-            display: flex;
-            align-items: center;
-            background-color: #edf3e9;
-        }
-        img.mast {
-            width: 110%;
-            height: auto;
-            margin:0 -5%;
-        }
-        main {
-            width: 100%;
-            max-width: 540px;
-            padding: 15px;
-            margin: auto;
-        }
-        img, .btn {
-            border-radius: 0.7rem;
-        }
-        .btn-dark:hover {
-            background-color:#502057;
-            border-color:#502057;
-        }
-        i {
-            background-color: #fff;
-            width: 2rem;
-            height: 2rem;
-            margin: -0.5rem 0.5rem;
-            display: inline-block;
-        }
-        i.cashapp {
-            -webkit-mask: url(img/cashapp.svg) no-repeat center;
-            mask: url(img/cashapp.svg) no-repeat center;
-        }
-        i.discord {
-            -webkit-mask: url(img/discord.svg) no-repeat center;
-            mask: url(img/discord.svg) no-repeat center;
-        }
-        i.fountain {
-            -webkit-mask: url(img/fountain.svg) no-repeat center;
-            mask: url(img/fountain.svg) no-repeat center;
-        }
-        i.locals {
-            -webkit-mask: url(img/locals.svg) no-repeat center;
-            mask: url(img/locals.svg) no-repeat center;
-        }
-        i.paypal {
-            -webkit-mask: url(img/paypal.svg) no-repeat center;
-            mask: url(img/paypal.svg) no-repeat center;
-        }
-        i.odysee {
-            -webkit-mask: url(img/odysee.svg) no-repeat center;
-            mask: url(img/odysee.svg) no-repeat center;
-        }
-        i.twitter {
-            -webkit-mask: url(img/twitter.svg) no-repeat center;
-            mask: url(img/twitter.svg) no-repeat center;
-        }
-        i.rss {
-            -webkit-mask: url(img/rss.svg) no-repeat center;
-            mask: url(img/rss.svg) no-repeat center;
-        }
+        body { display:flex;align-items:center;background-color:#edf3e9 }
+        img.mast { width:110%;height:auto;margin:0 -5% }
+        main { width:100%;max-width:540px;padding:15px;margin:auto }
+        #player { width:100%;height:100px;border:0;background:#1c1f23;padding:0.2rem }
+        img, .btn, iframe { border-radius:0.7rem }
+        .btn-dark:hover { background-color:#502057;border-color:#502057 }
+        i { background-color:#fff;width:2rem;height:2rem;margin:-0.5rem 0.5rem;display:inline-block }
+        i.cashapp { -webkit-mask:url(img/cashapp.svg) no-repeat center;mask:url(img/cashapp.svg) no-repeat center }
+        i.discord { -webkit-mask:url(img/discord.svg) no-repeat center;mask:url(img/discord.svg) no-repeat center }
+        i.fountain { -webkit-mask:url(img/fountain.svg) no-repeat center;mask:url(img/fountain.svg) no-repeat center }
+        i.locals { -webkit-mask:url(img/locals.svg) no-repeat center;mask:url(img/locals.svg) no-repeat center }
+        i.paypal { -webkit-mask:url(img/paypal.svg) no-repeat center;mask:url(img/paypal.svg) no-repeat center }
+        i.odysee { -webkit-mask:url(img/odysee.svg) no-repeat center;mask:url(img/odysee.svg) no-repeat center }
+        i.twitter { -webkit-mask:url(img/twitter.svg) no-repeat center;mask:url(img/twitter.svg) no-repeat center }
+        i.rss { -webkit-mask:url(img/rss.svg) no-repeat center;mask:url(img/rss.svg) no-repeat center }
     </style>
   </head>
-  <body class="text-center">    
+  <body class="text-center">
     <main>
         <img class="mt-1 mb-3 mast" src="img/mast.jpg" alt="The Xero Hour Podcast" />
+        <iframe id="player" title="Embedded Player" src="https://ascella.streamerr.co/public/xerotest/embed?theme=dark" frameborder="0" allowtransparency="true"></iframe>
         <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://play.fountain.fm/show/XHgnRIp9M2u4Etz0EIih"><i class="fountain"></i> Listen on Fountain</a>
         <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://odysee.com/@xeroforhire:3?view=content"><i class="odysee"></i> Watch on Odysee</a>
         <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://discord.gg/DRKZP4UR6B"><i class="discord"></i> Chat with me on Discord</a>

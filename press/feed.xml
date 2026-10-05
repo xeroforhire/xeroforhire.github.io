@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xeroforhire — Press</title>
+    <link>https://xeroforhire.com/press/</link>
+    <atom:link href="https://xeroforhire.com/press/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Official press releases and announcements from Jashae Slaughter (Xeroforhire) — writer, podcaster, musician, and founder of the Apocalyptiverse.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jul 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- NEWEST ITEM FIRST (sorted by pubDate). Add each new release as an <item> block directly below this line.
+         The press-release generator outputs a ready-to-paste <item> for you. -->
+
+    <item>
+      <title>The Last Day: Issue II Arrives August 4 — And Rivers City Is Already Open</title>
+      <link>https://xeroforhire.com/press/pr-008.html</link>
+      <guid>https://xeroforhire.com/press/pr-008.html</guid>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Apocalyptiverse Comics has released The Last Day: Issue II, the second chapter of Jashae Slaughter's black-and-white sci-fi series set in Rivers City. The issue is available to read now in the Reader Room at apocalyptiverse.com, a full week ahead of its August 4 storefront debut on Gumroad, GlobalComix, and Nerdanatix, with print editions from Amazon and Gumroad to follow. A full Origins press kit — world-building, a 12-question character FAQ, and credits — is available as a PDF at https://xeroforhire.com/files/the-last-day-origins-press-kit.pdf.</description>
+    </item>
+
+    <item>
+      <title>Apocalyptiverse Launches &#8220;Patriot Heroes&#8221; Card Set for America&#8217;s 250th Anniversary</title>
+      <link>https://xeroforhire.com/press/pr-007.html</link>
+      <guid>https://xeroforhire.com/press/pr-007.html</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description>19 collectible cards, drawn from 16 original works by five independent creators, go live today — redeemable by code or directly through a new in-platform card shop. The Patriot Heroes set marks the 250th anniversary of the United States and introduces Alpha Red, Atreydean Justice, Zemara, and Starstruck to the Apocalyptiverse roster.</description>
+    </item>
+
+    <item>
+      <title>City Brawlers Officially Launches with Exclusive Patriotic Characters Pack</title>
+      <link>https://xeroforhire.com/press/pr-005.html</link>
+      <guid>https://xeroforhire.com/press/pr-005.html</guid>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Apocalyptiverse has officially launched The Last Day: City Brawlers and released the Patriotic Characters Pack — a limited card set featuring exclusive variants of Iron Knight, Alpha Red, and Zemara, available now through the platform's pack redemption system at apocalyptiverse.com.</description>
+    </item>
+
+    <item>
+      <title>Apocalyptiverse Opens Submissions for 250th Anniversary Patriotic Card Set</title>
+      <link>https://xeroforhire.com/press/pr-006.html</link>
+      <guid>https://xeroforhire.com/press/pr-006.html</guid>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Apocalyptiverse is opening an invitation to independent creators to submit original characters for a special commemorative, patriotically-themed card set marking the 250th anniversary of the United States. Each selected character is presented in a unified stars-and-stripes treatment and added to the platform as a pullable card in a limited release dropping just before July 4th. Patriotic themes are welcome but not required; submissions close July 3, 2026.</description>
+    </item>
+
+    <item>
+      <title>Xeroforhire.com Launches as Official Archive</title>
+      <link>https://xeroforhire.com/press/pr-001.html</link>
+      <guid>https://xeroforhire.com/press/pr-001.html</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Independent creator Jashae Slaughter has launched xeroforhire.com as the official home and archive for his creative work — a single, owned home for the writing, the podcast, the music, and the Apocalyptiverse, consolidating more than 14 years of work in one permanent, platform-independent place.</description>
+    </item>
+
+    <item>
+      <title>Battle Run Launches on Apocalyptiverse.com</title>
+      <link>https://xeroforhire.com/press/pr-004.html</link>
+      <guid>https://xeroforhire.com/press/pr-004.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <description>Apocalyptiverse has released Battle Run, a browser-based card combat game set in the City of Rivers — the next step in a gamified sci-fi fiction economy where reading the books, collecting the cards, and playing the games are layers of a single connected universe.</description>
+    </item>
+
+    <item>
+      <title>Cyber Citizen Launches on Apocalyptiverse.com</title>
+      <link>https://xeroforhire.com/press/pr-003.html</link>
+      <guid>https://xeroforhire.com/press/pr-003.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <description>Apocalyptiverse has released Cyber Citizen, a browser-based moral choice game set in the City of Rivers — where every decision shapes a citizen's morality, infamy, health, and addiction across a series of two-choice scenarios drawn from life in a dystopian city.</description>
+    </item>
+
+    <item>
+      <title>Apocalyptiverse.com Launches as an Interactive Fiction Platform</title>
+      <link>https://xeroforhire.com/press/pr-002.html</link>
+      <guid>https://xeroforhire.com/press/pr-002.html</guid>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Independent creator Jashae Slaughter has launched apocalyptiverse.com — a browser-based platform combining collectible card packs, a live token economy, and original fiction set in the Apocalyptiverse universe, playable from any device at no cost to enter.</description>
+    </item>
+
+  </channel>
+</rss>

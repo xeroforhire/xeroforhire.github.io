@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Release Generator — Xeroforhire</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+        --white:#FFFFFF; --black:#1A1A1A; --accent:#4A7C8C; --accent-dark:#3a6c7c;
+        --light-gray:#F0F0F0; --mid-gray:#666666; --field-border:#cfcfcf;
+    }
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+        color: var(--black); background: var(--white);
+        line-height: 1.6; max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    }
+    h1 { font-family: Georgia, serif; font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .sub { color: var(--mid-gray); margin-bottom: 2rem; font-size: 0.95rem; }
+    h2 { font-family: Georgia, serif; font-size: 1.2rem; margin: 2rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--light-gray); }
+    .hint { font-weight: 400; color: var(--mid-gray); font-size: 0.8rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; margin-top: 1rem; }
+    input, textarea {
+        width: 100%; padding: 0.6rem 0.7rem; font-size: 0.95rem; font-family: inherit;
+        border: 1px solid var(--field-border); border-radius: 4px; background: #fff; color: var(--black);
+    }
+    input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 90px; }
+    textarea#body { min-height: 160px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+
+    .output-block { margin-top: 1rem; }
+    .output-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .output-head h3 { font-size: 0.9rem; font-family: Georgia, serif; }
+    .copy-btn {
+        background: var(--accent); color: #fff; border: none; padding: 0.4rem 0.9rem;
+        font-size: 0.82rem; border-radius: 4px; cursor: pointer; font-family: inherit;
+    }
+    .copy-btn:hover { background: var(--accent-dark); }
+    .copy-btn.copied { background: #2e7d32; }
+    pre {
+        background: #1A1A1A; color: #e6e6e6; padding: 1rem; border-radius: 6px;
+        overflow-x: auto; font-size: 0.8rem; font-family: 'Courier New', monospace; line-height: 1.5;
+        white-space: pre-wrap; word-break: break-word;
+    }
+    .preview { border: 1px solid var(--light-gray); border-radius: 6px; padding: 1.25rem; margin-top: 1rem; }
+    .preview .pr-date { font-family: 'Courier New', monospace; font-size: 0.82rem; color: var(--mid-gray); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .preview .pr-title { font-family: Georgia, serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .preview .pr-title a { color: var(--accent); text-decoration: none; }
+    .preview .pr-excerpt { color: var(--mid-gray); font-size: 0.95rem; }
+    .note { background: var(--light-gray); border-radius: 6px; padding: 1rem 1.25rem; font-size: 0.9rem; color: var(--mid-gray); margin-top: 1.5rem; }
+    .note strong { color: var(--black); }
+    .note code { background:#e2e2e2; padding:0.05rem 0.3rem; border-radius:3px; font-size:0.85em; }
+    .step { font-size: 0.85rem; color: var(--accent-dark); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Press Release Generator</h1>
+<p class="sub">Write the release once. The tool builds the short inline entry for the homepage (which links out to the full release) and the complete standalone page &mdash; both with schema.org structured data. Everything updates live as you type.</p>
+
+<h2>1. Details</h2>
+
+<div class="row">
+    <div>
+        <label>Release date <span class="hint">(published date)</span></label>
+        <input type="date" id="date">
+    </div>
+    <div>
+        <label>Slug / file name <span class="hint">(no spaces — becomes /press/<em>slug</em>.html)</span></label>
+        <input type="text" id="slug" placeholder="pr-002">
+    </div>
+</div>
+
+<label>Headline</label>
+<input type="text" id="headline" placeholder="New Apocalyptiverse Title Released">
+
+<label>Lead paragraph <span class="hint">(shows on the homepage and opens the full release — 1&ndash;3 sentences)</span></label>
+<textarea id="lead" placeholder="The first paragraph: what happened, why it matters, where to find it."></textarea>
+
+<label>Full release body <span class="hint">(the unrestricted expansion — appears after the lead on the standalone page. One paragraph per line, blank line between.)</span></label>
+<textarea id="body" placeholder="Expand without restraint here. Background, details, quotes, links — as much as the release needs."></textarea>
+
+<div class="row">
+    <div>
+        <label>Keywords <span class="hint">(comma-separated, optional)</span></label>
+        <input type="text" id="keywords" placeholder="The Last Day, Apocalyptiverse, release">
+    </div>
+    <div>
+        <label>Press email <span class="hint">(for the boilerplate, optional)</span></label>
+        <input type="text" id="email" placeholder="press@xeroforhire.com">
+    </div>
+</div>
+
+<label>Dateline city <span class="hint">(optional &mdash; e.g. OMAHA, ARK.)</span></label>
+<input type="text" id="city" placeholder="OMAHA, ARK.">
+
+<h2>2. Homepage Entry <span class="hint" style="font-weight:400;font-size:0.8rem;">— <span class="step">Step A</span>: paste into the Press section of index.html, newest first</span></h2>
+<div class="preview" id="preview"></div>
+<div class="output-block">
+    <div class="output-head"><h3>Inline HTML block</h3><button class="copy-btn" data-target="out-archive">Copy</button></div>
+    <pre id="out-archive"></pre>
+</div>
+
+<h2>3. Standalone Release Page <span class="hint" style="font-weight:400;font-size:0.8rem;">— <span class="step">Step B</span>: save as /press/<em>slug</em>.html</span></h2>
+<div class="output-block">
+    <div class="output-head"><h3>Full HTML page (schema included)</h3><button class="copy-btn" data-target="out-page">Copy</button></div>
+    <pre id="out-page"></pre>
+</div>
+
+<div class="note">
+    <strong>Two steps per release.</strong> <strong>A &mdash;</strong> Paste the inline block into the Press section of <code>index.html</code>, directly under the press-releases comment, keeping newest at the top. The headline links to the full page. <strong>B &mdash;</strong> Save the standalone page as <code>/press/{slug}.html</code> (matching the slug you entered). That's it — each release gets a short homepage lead and its own indexable, schema-backed page. No backend required.
+</div>
+
+<script>
+    var fields = ['date','slug','headline','lead','body','keywords','email','city'];
+    function el(id){ return document.getElementById(id); }
+    function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function escAttr(s){ return esc(s).replace(/"/g,'&quot;'); }
+
+    function fmtDate(iso){
+        if(!iso) return '';
+        var parts = iso.split('-'); var y=+parts[0], m=+parts[1], d=+parts[2];
+        var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+        return months[m-1]+' '+d+', '+y;
+    }
+    function paras(text){ return (text||'').split(/\n\s*\n/).map(function(p){return p.trim();}).filter(Boolean); }
+
+    function render(){
+        var date=el('date').value;
+        var slug=(el('slug').value.trim()||'pr-xxx').replace(/[^a-zA-Z0-9_-]/g,'-');
+        var headline=el('headline').value.trim();
+        var lead=el('lead').value.trim();
+        var body=el('body').value;
+        var keywords=el('keywords').value.trim();
+        var email=el('email').value.trim() || '[your-press-email@xeroforhire.com]';
+        var city=el('city').value.trim();
+        var human=fmtDate(date);
+        var pageUrl='https://xeroforhire.com/press/'+slug+'.html';
+
+        // Preview (homepage entry)
+        el('preview').innerHTML =
+            '<div class="pr-date">'+esc(human||'Date')+'</div>'+
+            '<div class="pr-title"><a href="#">'+esc(headline||'Headline')+'</a></div>'+
+            '<div class="pr-excerpt">'+esc(lead||'Lead paragraph will appear here.')+'</div>';
+
+        // Inline archive entry
+        el('out-archive').textContent =
+'<article class="press-release-item">\n'+
+'    <div class="pr-date">'+human+'</div>\n'+
+'    <h3 class="pr-title"><a href="press/'+slug+'.html">'+headline+'</a></h3>\n'+
+'    <p class="pr-excerpt">'+lead+'</p>\n'+
+'</article>';
+
+        // Schema
+        var schema={
+            "@context":"https://schema.org",
+            "@type":"NewsArticle",
+            "headline":headline,
+            "datePublished":date,
+            "author":{"@type":"Person","name":"Jashae Slaughter","alternateName":"Xeroforhire","url":"https://xeroforhire.com"},
+            "publisher":{"@type":"Organization","name":"Apocalyptiverse","url":"https://xeroforhire.com"},
+            "description":lead,
+            "url":pageUrl,
+            "mainEntityOfPage":pageUrl
+        };
+        if(keywords){ schema.keywords=keywords; }
+        var schemaStr=JSON.stringify(schema,null,2);
+        var schemaIndented='    '+schemaStr.replace(/\n/g,'\n    ');
+
+        // Standalone page
+        var datelinePrefix = (city ? esc(city)+' &mdash; ' : '') + human + ' &mdash; ';
+        var leadHtml = lead ? '    <p class="lead"><span class="dateline">'+datelinePrefix+'</span> '+esc(lead)+'</p>\n' : '';
+        var bodyHtml = paras(body).map(function(p){return '    <p>'+esc(p)+'</p>';}).join('\n');
+        if(bodyHtml) bodyHtml += '\n';
+
+        el('out-page').textContent =
+'<!DOCTYPE html>\n'+
+'<html lang="en">\n'+
+'<head>\n'+
+'    <meta charset="UTF-8">\n'+
+'    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n'+
+'    <title>'+esc(headline)+' — Jashae Slaughter</title>\n'+
+'    <meta name="description" content="'+escAttr(lead)+'">\n'+
+'    <link rel="canonical" href="'+escAttr(pageUrl)+'">\n'+
+'    <meta property="og:title" content="'+escAttr(headline)+'">\n'+
+'    <meta property="og:description" content="'+escAttr(lead)+'">\n'+
+'    <meta property="og:type" content="article">\n'+
+'    <meta property="og:url" content="'+escAttr(pageUrl)+'">\n'+
+'    <script type="application/ld+json">\n'+
+schemaIndented+'\n'+
+'    <\/script>\n'+
+'    <style>\n'+
+'        * { margin:0; padding:0; box-sizing:border-box; }\n'+
+'        body { font-family:system-ui,-apple-system,sans-serif; color:#1A1A1A; background:#fff; line-height:1.7; max-width:720px; margin:0 auto; padding:2rem 1.5rem 4rem; }\n'+
+'        .topbar { display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid #F0F0F0; padding-bottom:1rem; margin-bottom:2.25rem; }\n'+
+'        .topbar a { font-family:Georgia,serif; font-weight:700; font-size:1.2rem; color:#1A1A1A; text-decoration:none; }\n'+
+'        .pr-label { font-family:"Courier New",monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:#666; }\n'+
+'        .eyebrow { font-family:"Courier New",monospace; font-size:0.8rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#4A7C8C; margin-bottom:0.85rem; }\n'+
+'        h1 { font-family:Georgia,serif; font-size:2rem; line-height:1.22; margin-bottom:1.5rem; }\n'+
+'        .lead { font-size:1.1rem; margin-bottom:1.25rem; }\n'+
+'        .dateline { font-weight:700; }\n'+
+'        p { margin-bottom:1.25rem; }\n'+
+'        .endmark { text-align:center; font-family:"Courier New",monospace; letter-spacing:0.4em; color:#999; margin:2rem 0; }\n'+
+'        .boiler { margin-top:1rem; padding-top:1.5rem; border-top:1px solid #F0F0F0; font-size:0.9rem; color:#666; }\n'+
+'        .boiler h2 { font-family:Georgia,serif; font-size:1rem; color:#1A1A1A; margin-bottom:0.5rem; }\n'+
+'        .back { display:inline-block; margin-top:2.5rem; color:#4A7C8C; text-decoration:none; font-size:0.9rem; }\n'+
+'        a { color:#4A7C8C; }\n'+
+'    </style>\n'+
+'</head>\n'+
+'<body>\n'+
+'    <div class="topbar"><a href="/">Jashae Slaughter</a><span class="pr-label">Press Release</span></div>\n'+
+'    <p class="eyebrow">For Immediate Release</p>\n'+
+'    <h1>'+esc(headline)+'</h1>\n'+
+leadHtml+
+bodyHtml+
+'    <div class="endmark">&#35; &#35; &#35;</div>\n'+
+'    <div class="boiler">\n'+
+'        <h2>About Jashae Slaughter</h2>\n'+
+'        <p>Jashae Slaughter, known online as Xeroforhire for more than 14 years, is a writer, podcaster, musician, and independent creator. He is the founder of the Apocalyptiverse press and creator of the sci-fi action thriller <em>The Last Day<\/em>, hosts <em>The Xero for Hire Podcast<\/em>, and records music as <em>The Legend of XERO<\/em>.<\/p>\n'+
+'        <p>Press &amp; interviews: '+esc(email)+'<\/p>\n'+
+'    </div>\n'+
+'    <a class="back" href="/#press">&larr; Back to all press</a>\n'+
+'</body>\n'+
+'</html>';
+    }
+
+    fields.forEach(function(f){ el(f).addEventListener('input', render); });
+
+    document.querySelectorAll('.copy-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var text=el(btn.dataset.target).textContent;
+            navigator.clipboard.writeText(text).then(function(){
+                var orig=btn.textContent;
+                btn.textContent='Copied!'; btn.classList.add('copied');
+                setTimeout(function(){ btn.textContent=orig; btn.classList.remove('copied'); },1500);
+            });
+        });
+    });
+
+    el('date').value=new Date().toISOString().slice(0,10);
+    render();
+</script>
+
+</body>
+</html>

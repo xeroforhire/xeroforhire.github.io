@@ -1,59 +1,381 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Xero Hour is a Culture-War Podcast about Politics, Music, and Theology from an irreverent Christian perspective. Uploads (Very Late) Monday Nights.">
-    <title>The Xero Hour Podcast</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The official archive and source of truth for the creative work of Jashae Slaughter (Xeroforhire) — writer, podcaster, musician, and independent creator. Home of The Last Day, the Apocalyptiverse, The Xero for Hire Podcast, and The Legend of XERO.">
+    <meta name="keywords" content="Xeroforhire, Jashae Slaughter, The Last Day, Apocalyptiverse, The Xero for Hire Podcast, The Xero Hour, The Legend of XERO, speculative fiction, cyberpunk, comics, Christian creator, podcaster, musician">
+    <meta name="author" content="Jashae Slaughter">
+
+    <meta property="og:title" content="Jashae Slaughter — Xeroforhire">
+    <meta property="og:description" content="The official archive and source of truth for the creative work of Jashae Slaughter — writing, music, podcasting, and the Apocalyptiverse.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xeroforhire.com/">
+    <meta property="og:image" content="https://xeroforhire.com/profile-400x400.jpg">
+
+    <title>Jashae Slaughter — Xeroforhire</title>
+
+    <link rel="alternate" type="application/rss+xml" title="Xeroforhire — Press" href="/press/feed.xml">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jashae Slaughter",
+        "alternateName": "Xeroforhire",
+        "url": "https://xeroforhire.com",
+        "image": "https://xeroforhire.com/profile-400x400.jpg",
+        "jobTitle": ["Writer", "Podcaster", "Musician", "Comic Book Writer"],
+        "description": "Writer, podcaster, musician, and independent creator. Founder of the Apocalyptiverse press and creator of The Last Day. Host of The Xero for Hire Podcast. Recording artist as The Legend of XERO.",
+        "sameAs": [
+            "https://xeroforhire.substack.com/",
+            "https://apocalyptiverse.gumroad.com/",
+            "https://www.globalcomix.com/",
+            "https://www.instagram.com/xeroforhire/"
+        ]
+    }
+    </script>
+
     <style>
-        body { display:flex;align-items:center;background-color:#edf3e9 }
-        img.mast { width:110%;height:auto;margin:0 -5% }
-        main { width:100%;max-width:540px;padding:0 15px;margin:auto }
-        footer { font-size:0.8rem;margin-bottom:0.25rem }
-        footer i { width:1rem;height:1rem;margin:0.5rem 0.1rem -0.25rem }
-        footer, footer a, footer a:active, footer a:visited { color:#1a1e21 }
-        footer a { text-decoration:none }
-        footer a:hover { color:#502057 }
-        footer a:hover i { background-color:#502057 }
-        footer i { background-color:#1a1e21 }
-        #player { width:100%;height:115px;border:0;background:#1c1f23;padding:0.2rem }
-        img, .btn, iframe { border-radius:0.7rem }
-        .btn-dark:hover { background-color:#502057;border-color:#502057 }
-        i { background-color:#fff;width:2rem;height:2rem;margin:-0.5rem 0.5rem;display:inline-block }
-        i.cashapp { -webkit-mask:url(img/cashapp.svg) no-repeat center;mask:url(img/cashapp.svg) no-repeat center }
-        i.discord { -webkit-mask:url(img/discord.svg) no-repeat center;mask:url(img/discord.svg) no-repeat center }
-        i.email { -webkit-mask:url(img/email.svg) no-repeat center;mask:url(img/email.svg) no-repeat center }
-        i.facebook { -webkit-mask:url(img/facebook.svg) no-repeat center;mask:url(img/facebook.svg) no-repeat center }
-        i.fountain { -webkit-mask:url(img/fountain.svg) no-repeat center;mask:url(img/fountain.svg) no-repeat center }
-        i.locals { -webkit-mask:url(img/locals.svg) no-repeat center;mask:url(img/locals.svg) no-repeat center }
-        i.paypal { -webkit-mask:url(img/paypal.svg) no-repeat center;mask:url(img/paypal.svg) no-repeat center }
-        i.odysee { -webkit-mask:url(img/odysee.svg) no-repeat center;mask:url(img/odysee.svg) no-repeat center }
-        i.telegram { -webkit-mask:url(img/telegram.svg) no-repeat center;mask:url(img/telegram.svg) no-repeat center }
-        i.telephone { -webkit-mask:url(img/telephone.svg) no-repeat center;mask:url(img/telephone.svg) no-repeat center }
-        i.twtter { -webkit-mask:url(img/twtter.svg) no-repeat center;mask:url(img/twtter.svg) no-repeat center }
-        i.feed { -webkit-mask:url(img/feed.svg) no-repeat center;mask:url(img/feed.svg) no-repeat center }
-        i.shop { -webkit-mask:url(img/shop.svg) no-repeat center;mask:url(img/shop.svg) no-repeat center }
-        i.twitch { -webkit-mask:url(img/twitch.svg) no-repeat center;mask:url(img/twitch.svg) no-repeat center }
-        i.youtube { -webkit-mask:url(img/youtube.svg) no-repeat center;mask:url(img/youtube.svg) no-repeat center }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --white:#FFFFFF; --black:#1A1A1A; --accent:#4A7C8C; --accent-dark:#3a6c7c;
+            --light-gray:#F0F0F0; --mid-gray:#666666; --body-width:820px; --spacing:2rem;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: var(--white); color: var(--black); line-height: 1.6; font-size: 16px; }
+
+        header { border-bottom: 1px solid var(--light-gray); padding: 1.25rem 0; margin-bottom: calc(var(--spacing)*2); position: sticky; top: 0; background: var(--white); z-index: 100; }
+        nav { max-width: var(--body-width); margin: 0 auto; padding: 0 var(--spacing); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .site-title { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--black); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+        nav a { color: var(--black); text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+        nav a:hover { color: var(--accent); }
+
+        .hero { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*2); padding: 0 var(--spacing); }
+        .hero h1 { font-family: Georgia, serif; font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.4rem; }
+        .hero .handle { font-family: 'Courier New', monospace; font-size: 1rem; color: var(--accent); margin-bottom: 1rem; letter-spacing: 0.05em; }
+        .hero .identity { font-size: 1.2rem; margin-bottom: 1rem; }
+        .hero .mission { font-size: 1.02rem; color: var(--mid-gray); max-width: 640px; margin-bottom: var(--spacing); }
+        .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero-inner { display: flex; gap: 2.25rem; align-items: flex-start; justify-content: space-between; }
+        .hero-text { flex: 1; min-width: 0; }
+        .hero-photo { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 3px 16px rgba(0,0,0,0.16); }
+        @media (max-width: 640px) {
+            .hero-inner { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
+            .hero-photo { width: 116px; height: 116px; }
+        }
+        .cta-button { display: inline-block; padding: 0.7rem 1.4rem; background: var(--accent); color: var(--white); text-decoration: none; font-size: 0.95rem; border-radius: 4px; transition: background-color 0.2s; }
+        .cta-button:hover { background: var(--accent-dark); }
+        .cta-button.secondary { background: var(--mid-gray); }
+        .cta-button.secondary:hover { background: #555; }
+
+        /* Start Here */
+        .start-here { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*3); padding: 0 var(--spacing); }
+        .sh-band { background: var(--light-gray); border-radius: 6px; padding: 1.1rem 1.4rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; }
+        .sh-label { font-weight: 600; font-size: 0.95rem; }
+        .sh-links { list-style: none; display: flex; flex-wrap: wrap; gap: 1.25rem; }
+        .sh-links li { font-size: 0.95rem; }
+        .sh-links li span { font-family: 'Courier New', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-gray); margin-right: 0.4rem; }
+        .sh-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .sh-links a:hover { text-decoration: underline; }
+
+        section { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*3); padding: 0 var(--spacing); }
+        h2 { font-family: Georgia, serif; font-size: 1.7rem; font-weight: 700; margin-bottom: 1.4rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--light-gray); }
+        h3.subhead { font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        section p { margin-bottom: 1rem; }
+        section p.muted { color: var(--mid-gray); }
+        .lead { font-size: 1.05rem; }
+        .section-intro { color: var(--mid-gray); margin-bottom: 1.5rem; }
+
+        .medium-group { margin-bottom: 2rem; }
+        .medium-group > h3 { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent-dark); }
+        .medium-tag { display: inline-block; font-family: 'Courier New', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 0.1rem 0.4rem; }
+        .work-entry { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--light-gray); }
+        .work-entry:last-child { border-bottom: none; }
+        .work-name { font-family: Georgia, serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .work-meta { font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--mid-gray); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .work-desc { color: var(--mid-gray); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .work-links { font-size: 0.95rem; }
+        .work-links a { color: var(--accent); text-decoration: none; }
+        .work-links a:hover { text-decoration: underline; }
+        .archive-cta { margin-top: 1rem; }
+
+        .timeline { list-style: none; border-left: 2px solid var(--light-gray); padding-left: 1.5rem; }
+        .timeline li { margin-bottom: 1.25rem; position: relative; }
+        .timeline li::before { content: ""; position: absolute; left: calc(-1.5rem - 6px); top: 0.45rem; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; }
+        .timeline .tl-year { font-family: 'Courier New', monospace; font-weight: 700; color: var(--accent-dark); margin-right: 0.5rem; }
+
+        .press-intro { color: var(--mid-gray); margin-bottom: 1.5rem; }
+        .press-release-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--light-gray); }
+        .pr-date { font-family: 'Courier New', monospace; font-size: 0.82rem; color: var(--mid-gray); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .pr-title { font-family: Georgia, serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .pr-title a { color: var(--black); text-decoration: none; transition: color 0.2s; }
+        .pr-title a:hover { color: var(--accent); }
+        .pr-excerpt { color: var(--mid-gray); font-size: 0.95rem; margin-bottom: 0; }
+
+        .qa-item { margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent); }
+        .qa-item h4 { font-family: Georgia, serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .qa-item p { color: var(--mid-gray); font-size: 0.95rem; margin-bottom: 0; }
+
+        .resource-list { list-style: none; font-size: 0.95rem; }
+        .resource-list li { margin-bottom: 0.5rem; }
+        .resource-list a { color: var(--accent); text-decoration: none; }
+
+        footer { background: var(--light-gray); margin-top: calc(var(--spacing)*3); padding: var(--spacing) 0; border-top: 1px solid #e0e0e0; }
+        .footer-content { max-width: var(--body-width); margin: 0 auto; padding: 0 var(--spacing); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+        .footer-links a { color: var(--black); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-credit { color: var(--mid-gray); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            :root { --spacing: 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            h2 { font-size: 1.4rem; }
+            nav ul { gap: 0.9rem; }
+            nav a { font-size: 0.82rem; }
+            .footer-content { flex-direction: column; align-items: flex-start; }
+        }
+        a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
     </style>
-  </head>
-  <body class="text-center">
-    <main>
-        <img class="mb-3 mast" src="img/mast.jpg" alt="The Xero Hour Podcast" />
-        <iframe id="player" title="Embedded Player" src="https://ascella.streamerr.co/public/thexerohour/embed?theme=dark" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://odysee.com/@xeroforhire:3?view=content"><i class="odysee"></i> Watch on Odysee</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://www.youtube.com/channel/UC1JhdjNi7D3RtpnKVOgE-Qg"><i class="youtube"></i> Watch on ye ole' YouTube</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://twitter.com/xeroforhire"><i class="twtter"></i> Argue with me on Twitter</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://t.me/thexerohourradio"><i class="telegram"></i> Get extras on Telegram</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://www.twitch.tv/therealxeroforhire/"><i class="twitch"></i> Gaming on Twitch</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://shop.thexerohour.com/"><i class="shop"></i> Shop at the merch store</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://cash.app/$xeroforhire"><i class="cashapp"></i> Donate on Cashapp</a>
-        <a class="w-100 btn btn-lg btn-dark mb-2" target="_blank" href="https://feed.thexerohour.com/"><i class="feed"></i> Follow the RSS feed</a>
-        <footer>
-          <a href="tel:9892493372" title="Leave me a voice message"><i class="telephone"></i> 989.249.3372</a>
-          <a class="offset-2" target="_blank" href="mailto:radio@thexerohour.com" title="Send me an eMail"><i class="email"></i> radio@thexerohour.com</a>
-        </footer>
-    </main>
-  </body>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#top" class="site-title">Jashae Slaughter</a>
+        <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#press">Press</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Jashae Slaughter</h1>
+            <p class="handle">@xeroforhire</p>
+            <p class="identity">Writer, podcaster, musician, and independent creator.</p>
+            <p class="mission">The official home and archive for my creative work — writing, music, podcasting, and the Apocalyptiverse. One permanent source of truth for who I am, what I've made, and where to find it, independent of any single platform.</p>
+            <div class="cta-group">
+                <a href="#works" class="cta-button">Explore the Works</a>
+                <a href="works.html" class="cta-button secondary">Full Archive</a>
+            </div>
+        </div>
+        <img class="hero-photo" src="profile-400x400.jpg" alt="Jashae Slaughter (Xeroforhire)" width="168" height="168">
+    </div>
+</section>
+
+<!-- ============ START HERE ============ -->
+<section class="start-here" id="start">
+    <div class="sh-band">
+        <span class="sh-label">New here? Start with one:</span>
+        <ul class="sh-links">
+            <li><span>Listen</span><a href="https://xeroforhire.substack.com/">The Xero for Hire Podcast</a></li>
+            <li><span>Read</span><a href="https://apocalyptiverse.gumroad.com/">The Last Day</a></li>
+            <li><span>Explore</span><a href="works.html">The Apocalyptiverse</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============ WORKS (intro) ============ -->
+<section id="works">
+    <h2>Works</h2>
+    <p class="section-intro">Three pillars, one body of work. A short introduction below — the full catalog, with release details and links, lives in the <a href="works.html" style="color:var(--accent);">Works archive</a>.</p>
+
+    <div class="medium-group">
+        <h3>Writing</h3>
+        <div class="work-entry">
+            <div class="work-name">The Last Day &amp; the Apocalyptiverse</div>
+            <div class="work-meta">Comics &amp; Prose &middot; Status: Ongoing</div>
+            <p class="work-desc">A cyberpunk sci-fi action thriller set in Rivers, a neon-drenched walled city under the New Earth Order — the flagship of the Apocalyptiverse, the independent press under which all the fiction lives.</p>
+            <p class="work-links"><a href="https://apocalyptiverse.gumroad.com/">Gumroad</a> &middot; <a href="https://www.amazon.com/s?i=digital-text&rh=p_27%3AJashae+Slaughter">Amazon</a> &middot; <a href="https://www.globalcomix.com/">GlobalComix</a></p>
+        </div>
+    </div>
+
+    <div class="medium-group">
+        <h3>Commentary</h3>
+        <div class="work-entry">
+            <div class="work-name">The Xero for Hire Podcast <span style="font-weight:400;color:var(--mid-gray);">(The Xero Hour)</span></div>
+            <div class="work-meta">Podcast &middot; Status: Active</div>
+            <p class="work-desc">News, culture, and theology through an irreverent Christian perspective, with an emphasis on divergent thinking. Cultural analysis, media criticism, and personal reflection.</p>
+            <p class="work-links"><a href="https://xeroforhire.substack.com/">Substack</a></p>
+        </div>
+    </div>
+
+    <div class="medium-group">
+        <h3>Music</h3>
+        <div class="work-entry">
+            <div class="work-name">The Legend of XERO</div>
+            <div class="work-meta">Christian Hip-Hop &middot; Status: Active (2012&ndash;present)</div>
+            <p class="work-desc">Slaughter's recording identity — a Christian hip-hop artist blending rap, pop, and electronic production around speculative, superhero-tinged concepts. Albums include <em>The Resonant Dissonance</em> (2021) and <em>Assimilate</em> (2025).</p>
+            <p class="work-links"><a href="https://thelegendofxero.bandcamp.com/">Bandcamp</a> &middot; <a href="https://music.apple.com/us/artist/the-legend-of-xero/379710352">Apple Music</a></p>
+        </div>
+    </div>
+
+    <div class="archive-cta">
+        <a href="works.html" class="cta-button">View the full Works archive &rarr;</a>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+    <h2>About</h2>
+    <p class="lead">Jashae Slaughter — known online as Xeroforhire for more than 14 years — is a writer, podcaster, musician, and independent creator. His work spans speculative fiction, comics, music, and cultural commentary, all originating from the same hand and belonging to one larger body of work.</p>
+    <p>He is the founder of the <strong>Apocalyptiverse</strong>, his independent press, and the creator of its flagship sci-fi action thriller <em>The Last Day</em>. He hosts <em>The Xero for Hire Podcast</em> and records music as <em>The Legend of XERO</em>.</p>
+
+    <h3 class="subhead">Creative Philosophy</h3>
+    <p>Slaughter writes from a Christian worldview, but the worldview is the lens, not the message. His fiction is deliberately anti-didactic: most cyberpunk trends nihilistic, while his work assumes a moral backbone exists and asks how people actually operate inside worlds like ours, but fantastical. Story comes first; theme is embedded rather than applied to the surface.</p>
+    <p>Across the commentary and the creative work alike, the throughline is discernment over tribe — testing ideas against evidence and a coherent worldview rather than defaulting to what any given audience expects to hear.</p>
+
+    <h3 class="subhead">Background</h3>
+    <p>The Xeroforhire name has been Slaughter's creative identity for over a decade — the umbrella under which he publishes, podcasts, and makes music. This site exists to gather that work in one place, owned and maintained directly, so the full picture survives independent of any platform's algorithm or longevity.</p>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline">
+    <h2>Timeline</h2>
+    <p class="section-intro">A short record of provenance — these aren't disconnected projects, but chapters in one ongoing body of work. <!-- Replace [year] placeholders with accurate dates. --></p>
+    <ul class="timeline">
+        <li><span class="tl-year">2012</span><span class="tl-event">Xeroforhire brand established.</span></li>
+        <li><span class="tl-year">2012</span><span class="tl-event">Music releases begin as The Legend of XERO, starting with the album <em>VS (Versus)</em>.</span></li>
+        <li><span class="tl-year">[year]</span><span class="tl-event">The Xero for Hire Podcast launches.</span></li>
+        <li><span class="tl-year">2024</span><span class="tl-event">The Last Day and the Apocalyptiverse published — the comic's 22-page launch issue arrives in August.</span></li>
+        <li><span class="tl-year">2026</span><span class="tl-event">Xeroforhire.com launches as the official archive.</span></li>
+    </ul>
+</section>
+
+<!-- ============ PRESS ============ -->
+<section id="press">
+    <h2>Press</h2>
+    <p class="press-intro">Official announcements and media resources. New press releases roughly every 28 days. <a href="/press/feed.xml" style="color:var(--accent);">Subscribe via RSS</a>.</p>
+
+    <!-- PRESS RELEASES load automatically from /press/feed.xml (see script at end of file).
+         To publish a release: add its <item> to feed.xml and save its standalone page in /press/.
+         The static entry below is a fallback shown only if the feed can't be reached. -->
+
+    <div id="press-feed">
+        <article class="press-release-item">
+            <div class="pr-date">June 10, 2026</div>
+            <h3 class="pr-title"><a href="press/pr-001.html">Xeroforhire.com Launches as Official Archive</a></h3>
+            <p class="pr-excerpt">Launch of the personal site and press hub — a single, owned home for the writing, the podcast, the music, and the Apocalyptiverse. Built to consolidate more than 14 years of work in one permanent, platform-independent place.</p>
+        </article>
+    </div>
+
+    <h3 class="subhead">Media FAQ</h3>
+
+    <div class="qa-item">
+        <h4>What is the Apocalyptiverse?</h4>
+        <p>The independent press and the universe under which all of Jashae Slaughter's fiction lives — the hub for his worldbuilding across novels, comics, and short fiction. <em>The Last Day</em> is the flagship.</p>
+    </div>
+    <div class="qa-item">
+        <h4>Why cyberpunk and sci-fi from a Christian worldview?</h4>
+        <p>Most cyberpunk is nihilistic and often explicitly anti-Christian. The Apocalyptiverse is built within a Christian worldview framework instead — not as instruction, but as speculation: how would people actually operate in circumstances like ours, but fantastical? It assumes a moral backbone exists without lecturing about it.</p>
+    </div>
+    <div class="qa-item">
+        <h4>Is this didactic fiction?</h4>
+        <p>No. The stories aren't written to teach or preach. Faith is tested and refined through struggle in the narrative — never bolted on as a message.</p>
+    </div>
+    <div class="qa-item">
+        <h4>What does "irreverent Christian perspective" mean?</h4>
+        <p>Tackling complex and sometimes controversial topics with honesty and humor while holding a foundational belief in Christian truth — a high view of Scripture paired with a low tolerance for performative outrage and cultural conformity on any side.</p>
+    </div>
+    <div class="qa-item">
+        <h4>What sets the commentary apart?</h4>
+        <p>A willingness to turn the same scrutiny on his own side as on anyone else's. The throughline isn't a political team; it's divergent thinking and discernment — follow the evidence and the worldview, not the tribe. Listeners looking only for agreement are told, plainly, that they may not be the right audience for the show.</p>
+    </div>
+    <div class="qa-item">
+        <h4>How does he think about AI?</h4>
+        <p>As a tool for stewardship, not a moral agent. The real question is discernment: use AI for rote tasks, but reserve conceptual leadership for the human. He draws a sharp line between convergent thinking, which AI does well, and divergent thinking — the uniquely human capacity he sees as central to real artistry. The danger isn't the tool; it's accepting its outputs uncritically and drifting into algorithmic conformity.</p>
+    </div>
+    <div class="qa-item">
+        <h4>How does he think about "Christian" music?</h4>
+        <p>Skeptically, as a category. Labeling art "Christian" too often lowers the bar, prioritizing message over craft. The goal is excellent work on its own merits — truth and beauty aren't confined to a genre, and worship is a way of living rather than a musical style.</p>
+    </div>
+
+    <h3 class="subhead">Media Resources</h3>
+    <ul class="resource-list">
+        <li>Downloadable press kit (PDF): <a href="press-kit.pdf">press-kit.pdf</a></li>
+        <li>Booking &amp; interviews: see <a href="#contact">Contact</a></li>
+    </ul>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>For press, booking, interviews, and collaboration inquiries:</p>
+    <p class="lead"><a href="mailto:press@xeroforhire.com" style="color:var(--accent);text-decoration:none;">press@xeroforhire.com</a></p>
+    <p class="muted">Routed through the domain, in keeping with the per-platform alias convention. Make sure press@ is set up in your Cloudflare Email Routing so inquiries land in your inbox.</p>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p class="footer-credit">&copy; 2026 Jashae Slaughter (Xeroforhire). All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="works.html">Works</a></li>
+            <li><a href="https://xeroforhire.substack.com/">Substack</a></li>
+            <li><a href="https://apocalyptiverse.gumroad.com/">Gumroad</a></li>
+            <li><a href="https://www.globalcomix.com/">GlobalComix</a></li>
+            <li><a href="https://thelegendofxero.bandcamp.com/">Bandcamp</a></li>
+            <li><a href="https://www.instagram.com/xeroforhire/">Instagram</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+// Populate the Press section from /press/feed.xml so the homepage updates
+// automatically whenever the feed is updated. Falls back to static HTML on error.
+(function () {
+    var container = document.getElementById('press-feed');
+    if (!container || !window.fetch || !window.DOMParser) return;
+
+    function tag(parent, name) {
+        var n = parent.getElementsByTagName(name)[0];
+        return n && n.textContent ? n.textContent.trim() : '';
+    }
+    function esc(s) {
+        return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+    function escAttr(s) { return esc(s).replace(/"/g, '&quot;'); }
+    function fmtDate(pub) {
+        var d = new Date(pub);
+        if (isNaN(d.getTime())) return pub;
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    fetch('/press/feed.xml', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('feed unavailable'); return r.text(); })
+        .then(function (xml) {
+            var doc = new DOMParser().parseFromString(xml, 'application/xml');
+            if (doc.getElementsByTagName('parsererror').length) throw new Error('parse error');
+            var items = doc.getElementsByTagName('item');
+            if (!items.length) return; // keep fallback
+            var html = '';
+            for (var i = 0; i < items.length; i++) {
+                var it = items[i];
+                var title = tag(it, 'title');
+                var link = tag(it, 'link');
+                var desc = tag(it, 'description');
+                var date = fmtDate(tag(it, 'pubDate'));
+                html += '<article class="press-release-item">'
+                    + '<div class="pr-date">' + esc(date) + '</div>'
+                    + '<h3 class="pr-title"><a href="' + escAttr(link) + '">' + esc(title) + '</a></h3>'
+                    + '<p class="pr-excerpt">' + esc(desc) + '</p>'
+                    + '</article>';
+            }
+            container.innerHTML = html;
+        })
+        .catch(function () { /* leave the static fallback entry in place */ });
+})();
+</script>
+
+</body>
 </html>

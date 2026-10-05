@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The complete archive of the creative work of Jashae Slaughter (Xeroforhire) — writing, comics, podcasting, and music. A documentation of an independent creative career.">
+    <meta name="keywords" content="Jashae Slaughter, Xeroforhire, The Last Day, Apocalyptiverse, bibliography, works, comics, novels, The Legend of XERO, The Xero for Hire Podcast">
+    <meta name="author" content="Jashae Slaughter">
+    <link rel="canonical" href="https://xeroforhire.com/works.html">
+
+    <meta property="og:title" content="Works — Jashae Slaughter">
+    <meta property="og:description" content="The complete archive of the creative work of Jashae Slaughter — writing, comics, podcasting, and music.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xeroforhire.com/works.html">
+
+    <title>Works — Jashae Slaughter</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --white:#FFFFFF; --black:#1A1A1A; --accent:#4A7C8C; --accent-dark:#3a6c7c;
+            --light-gray:#F0F0F0; --mid-gray:#666666; --body-width:820px; --spacing:2rem;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: var(--white); color: var(--black); line-height: 1.6; font-size: 16px; }
+
+        header { border-bottom: 1px solid var(--light-gray); padding: 1.25rem 0; margin-bottom: calc(var(--spacing)*2); position: sticky; top: 0; background: var(--white); z-index: 100; }
+        nav { max-width: var(--body-width); margin: 0 auto; padding: 0 var(--spacing); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .site-title { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--black); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+        nav a { color: var(--black); text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+        nav a:hover { color: var(--accent); }
+
+        .page-head { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*2); padding: 0 var(--spacing); }
+        .page-head h1 { font-family: Georgia, serif; font-size: 2.3rem; line-height: 1.2; margin-bottom: 0.6rem; }
+        .page-head p { color: var(--mid-gray); max-width: 640px; }
+
+        /* In-page index */
+        .toc { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*2); padding: 0 var(--spacing); }
+        .toc-band { background: var(--light-gray); border-radius: 6px; padding: 0.9rem 1.4rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+        .toc-band span { font-family: 'Courier New', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-gray); }
+        .toc-band a { color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        .toc-band a:hover { text-decoration: underline; }
+
+        section { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*3); padding: 0 var(--spacing); }
+        h2 { font-family: Georgia, serif; font-size: 1.7rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); color: var(--accent-dark); }
+        h3.group { font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; margin: 1.75rem 0 1rem; }
+        .cat-note { color: var(--mid-gray); font-size: 0.92rem; margin-bottom: 1.25rem; }
+
+        .entry { margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--light-gray); }
+        .entry:last-child { border-bottom: none; }
+        .entry .title { font-family: Georgia, serif; font-size: 1.08rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .entry .meta { font-family: 'Courier New', monospace; font-size: 0.78rem; color: var(--mid-gray); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.45rem; }
+        .entry .desc { color: var(--mid-gray); font-size: 0.94rem; margin-bottom: 0.45rem; }
+        .entry .links { font-size: 0.93rem; }
+        .entry .links a { color: var(--accent); text-decoration: none; }
+        .entry .links a:hover { text-decoration: underline; }
+
+        .fill { background: #fff8e6; border: 1px dashed #d9b85c; color: #7a5d12; font-size: 0.82rem; padding: 0.15rem 0.45rem; border-radius: 3px; font-family: 'Courier New', monospace; }
+
+        .maint-note { max-width: var(--body-width); margin: 0 auto calc(var(--spacing)*2); padding: 0.9rem 1.4rem; background: #fff8e6; border: 1px solid #e8d49a; border-radius: 6px; font-size: 0.88rem; color: #6b551c; }
+        .maint-note strong { color: #4a3a10; }
+
+        footer { background: var(--light-gray); margin-top: calc(var(--spacing)*3); padding: var(--spacing) 0; border-top: 1px solid #e0e0e0; }
+        .footer-content { max-width: var(--body-width); margin: 0 auto; padding: 0 var(--spacing); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+        .footer-links a { color: var(--black); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-credit { color: var(--mid-gray); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            :root { --spacing: 1.5rem; }
+            .page-head h1 { font-size: 1.9rem; }
+            h2 { font-size: 1.4rem; }
+            nav ul { gap: 0.9rem; }
+            nav a { font-size: 0.82rem; }
+            .footer-content { flex-direction: column; align-items: flex-start; }
+        }
+        a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="site-title">Jashae Slaughter</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#press">Press</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-head">
+    <h1>Works</h1>
+    <p>A complete record of the creative work produced under the Xeroforhire name — organized by medium. This page is built for documentation, not sales: a single place where the shape of an independent creative career can be understood at a glance.</p>
+</div>
+
+<div class="toc">
+    <div class="toc-band">
+        <span>Jump to</span>
+        <a href="#writing">Writing</a>
+        <a href="#podcasting">Podcasting</a>
+        <a href="#music">Music</a>
+    </div>
+</div>
+
+<!-- MAINTENANCE NOTE: this banner is for you, not the public. Delete it before/after you have
+     confirmed every title, release date, status, and link below. Replace each [bracketed] marker
+     with real data, and remove entries that don't belong. Do not leave invented dates in place. -->
+<div class="maint-note">
+    <strong>Draft — confirm dates before publishing.</strong> The Writing titles, formats, descriptions, and links are sourced from your published listings. Remaining <span class="fill">[fill]</span> markers are mostly exact release dates and the Podcasting/Music sections. Remove this banner once it's accurate.
+</div>
+
+<!-- ============ WRITING ============ -->
+<section id="writing">
+    <h2>Writing</h2>
+    <p class="cat-note">Fiction published under the Apocalyptiverse, the independent press founded by Jashae Slaughter.</p>
+
+    <p class="cat-note" style="margin-top:-0.75rem;">The fiction is published as <em>The Last Day</em> series under Xero For Hire Productions. Prose titles are co-written with Elias Blackwood.</p>
+
+    <h3 class="group">Comics</h3>
+    <div class="entry">
+        <div class="title">The Last Day (Comic)</div>
+        <div class="meta">Comic &middot; August 2024 &middot; Issue #1</div>
+        <p class="desc">The 22-page launch issue that opened the Apocalyptiverse. Two friends, Steve and Silas, investigate a new full-dive VR arcade in their town — and when Silas is hooked into the machine, the game stops behaving like a game. Illustrated by Liilica Aoi, with prologue art by Studio Abiboge and cityscapes by Ailer Azusano. A Creator's Cut with sketches and behind-the-scenes lore is available on Gumroad.</p>
+        <p class="links"><a href="https://apocalyptiverse.gumroad.com/">Gumroad (Creator's Cut)</a> &middot; <a href="https://www.amazon.com/Last-Day-Comic-Jashae-Slaughter/dp/B0FG1F5JV9">Amazon</a> &middot; <a href="https://www.globalcomix.com/">GlobalComix</a></p>
+    </div>
+
+    <h3 class="group">Novels &amp; Novellas</h3>
+    <div class="entry">
+        <div class="title">Shadow of the Knight</div>
+        <div class="meta">Novel &middot; Kindle &amp; Paperback &middot; <span class="fill">[release: confirm]</span></div>
+        <p class="desc">A cyberpunk dystopian entry in <em>The Last Day</em>. In the city of Rivers, the vigilante Iron Knight wages war against the powers that run it. When young technopath Silas Midori discovers his abilities, he's pulled into a fight far larger than himself — against the New Earth Order and the secrets of Kisonic Enterprises. <span style="color:var(--mid-gray);">(Listed on Amazon as <em>The Last Day</em> Book 3 — confirm series order.)</span></p>
+        <p class="links"><a href="https://www.amazon.com/Shadow-Knight-Last-Day-Book-ebook/dp/B0CTHSRVRS">Amazon</a> &middot; <a href="https://apocalyptiverse.gumroad.com/">Gumroad</a></p>
+    </div>
+    <div class="entry">
+        <div class="title">Utopia: The Last Day</div>
+        <div class="meta">Novel &middot; Kindle &amp; Paperback &middot; <span class="fill">[release: confirm]</span></div>
+        <p class="desc">Set in the City of Cathedral, where Naomi promises paradise to all who submit to her rule, backed by the Beloved — a manifestation of collective despair dressed as reverence. Mars, a warrior driven by justice and faith, sees through the illusion and becomes the city's hope in a clash of ideals: hope against despair, resilience against control.</p>
+        <p class="links"><a href="https://www.amazon.com/Utopia-Last-Day-Jashae-Slaughter-ebook/dp/B0FF2XXXS8">Amazon</a> &middot; <a href="https://apocalyptiverse.gumroad.com/">Gumroad</a></p>
+    </div>
+
+    <h3 class="group">Short &amp; Serialized Fiction</h3>
+    <div class="entry">
+        <div class="title">The Last Day: Chat Logs &mdash; #CityVoices</div>
+        <div class="meta">Epistolary &middot; Kindle &amp; Paperback &middot; <span class="fill">[release: confirm]</span></div>
+        <p class="desc">An epistolary entry in <em>The Last Day</em>, told through the chat logs and voices of the city — a ground-level view of the world from the people living inside it.</p>
+        <p class="links"><a href="https://us.amazon.com/Last-Day-Chat-Logs-CityVoices-ebook/dp/B0DQFZLR4M">Amazon</a> &middot; <a href="https://apocalyptiverse.gumroad.com/">Gumroad</a></p>
+    </div>
+
+    <h3 class="group">Announced / In Development</h3>
+    <p class="cat-note"><span class="fill">[These titles weren't found as published listings — confirm status, add details, or remove. Candidates from your plans: SOS, Harbinger: Legend of the 7 Brothers, Gatekeepers (Iron Knight &amp; Ghostwire), the noir anthology Kokutetsuki, and a children's story.]</span></p>
+    <!-- Add confirmed in-development titles here as individual entries when ready. -->
+</section>
+
+<!-- ============ PODCASTING ============ -->
+<section id="podcasting">
+    <h2>Podcasting</h2>
+    <p class="cat-note">Commentary on news, culture, and faith from an irreverent Christian perspective.</p>
+
+    <h3 class="group">The Show</h3>
+    <div class="entry">
+        <div class="title">The Xero for Hire Podcast <span style="font-weight:400;color:var(--mid-gray);">(The Xero Hour)</span></div>
+        <div class="meta">Podcast &middot; <span class="fill">[launched: year]</span> &middot; Active</div>
+        <p class="desc">News, culture, and theology through an irreverent Christian perspective, with an emphasis on divergent thinking. Episodes move between cultural analysis, media criticism, and personal reflection.</p>
+        <p class="links"><a href="https://xeroforhire.substack.com/">Substack</a></p>
+    </div>
+
+    <h3 class="group">Recurring Themes</h3>
+    <div class="entry">
+        <p class="desc">Faith &amp; culture; media and speculative-fiction criticism; personal reflection on creativity, work, and provision; and an ongoing, stewardship-minded conversation about technology and AI.</p>
+    </div>
+
+    <h3 class="group">Notable Series &amp; Episodes</h3>
+    <div class="entry">
+        <p class="desc"><span class="fill">[Optional: list standout series or episodes you want documented, with links. Leave blank if you'd rather not highlight specific episodes here.]</span></p>
+    </div>
+</section>
+
+<!-- ============ MUSIC ============ -->
+<section id="music">
+    <h2>Music</h2>
+    <p class="cat-note">Recording work released under the name The Legend of XERO.</p>
+
+    <h3 class="group">Artist</h3>
+    <div class="entry">
+        <div class="title">The Legend of XERO</div>
+        <div class="meta">Christian Hip-Hop &middot; 2012&ndash;present &middot; Active</div>
+        <p class="desc">Jashae Slaughter's recording identity — a Christian hip-hop artist whose work blends rap, pop, and electronic/dance production, often built around speculative and superhero-tinged concepts. A Mid-Michigan recording artist and member of the Black Sheep Squad, with ties to Anno Domini Beats and the Christian rap community.</p>
+        <p class="links"><a href="https://thelegendofxero.bandcamp.com/">Bandcamp</a> &middot; <a href="https://music.apple.com/us/artist/the-legend-of-xero/379710352">Apple Music</a></p>
+    </div>
+
+    <h3 class="group">Albums</h3>
+    <div class="entry">
+        <div class="title">Assimilate (AI Remix Album)</div>
+        <div class="meta">Album &middot; May 2025 &middot; 9 tracks</div>
+        <p class="desc">A nine-track remix project reworking the catalog through AI-assisted production — fitting for an artist whose commentary centers on using new tools with discernment rather than fear.</p>
+        <p class="links"><a href="https://thelegendofxero.bandcamp.com/album/assimilate-ai-remix-album">Bandcamp</a></p>
+    </div>
+    <div class="entry">
+        <div class="title">The Resonant Dissonance</div>
+        <div class="meta">Album &middot; March 2021 &middot; 10 tracks</div>
+        <p class="desc">A full-length spanning genres and guests, including collaborations with BRM and Marqus Anthony. Tracks range from "Wayfaring Stranger (Run Away Slave)" to "Superhumans" and "Enemies."</p>
+        <p class="links"><a href="https://thelegendofxero.bandcamp.com/">Bandcamp</a> &middot; <a href="https://music.apple.com/us/artist/the-legend-of-xero/379710352">Apple Music</a></p>
+    </div>
+    <div class="entry">
+        <div class="title">VS (Versus)</div>
+        <div class="meta">Album &middot; 2012</div>
+        <p class="desc">An early full-length and one of the project's first releases — a genre-blending Christian hip-hop set featuring a rotating cast of emcees.</p>
+        <p class="links"><span class="fill">[Add link if available on Bandcamp/streaming]</span></p>
+    </div>
+
+    <h3 class="group">Singles</h3>
+    <div class="entry">
+        <div class="title">Please Don't Feed The Monsters (feat. Edify &amp; Elohin)</div>
+        <div class="meta">Single &middot; 2016 &middot; Self-produced</div>
+        <p class="desc">A self-produced single built around the idea of the "monster inside" — the darker self that feeds on fear, sin, and negativity. Premiered via Rapzilla.</p>
+        <p class="links"><a href="https://music.apple.com/us/artist/the-legend-of-xero/379710352">Apple Music</a></p>
+    </div>
+    <div class="entry">
+        <p class="desc">Additional singles and remixes — including "Spirit Led (Remix)," "Arena (Impossible)," and "Worship At Ya Throne (Future Bass XEROmix)" — are available on streaming. <span class="fill">[Add release years/links for any you want individually documented.]</span></p>
+    </div>
+
+    <h3 class="group">Collaborations &amp; Guest Features</h3>
+    <div class="entry">
+        <div class="title">Average Joe &mdash; "Wolves" (ft. The Legend of Xero)</div>
+        <div class="meta">Guest feature &middot; January 2018 &middot; Anno Domini Beats</div>
+        <p class="desc">A guest verse on Average Joe's (Joe Bragg) track, produced on Anno Domini Beats — a sharp Christian hip-hop cut about discernment and testing what's preached against the Word.</p>
+        <p class="links"><a href="https://averagejoe101.bandcamp.com/track/wolves-ft-the-legend-of-xero">Bandcamp</a></p>
+    </div>
+    <div class="entry">
+        <p class="desc">Further features include "Radiance" (with Average Joe) and "Pressure" (with Corey Breeze, Jess Aleakatino, B Myree, and Elohin), available on streaming. <span class="fill">[Add years/links as desired.]</span></p>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p class="footer-credit">&copy; 2026 Jashae Slaughter (Xeroforhire). All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://xeroforhire.substack.com/">Substack</a></li>
+            <li><a href="https://apocalyptiverse.gumroad.com/">Gumroad</a></li>
+            <li><a href="https://www.globalcomix.com/">GlobalComix</a></li>
+            <li><a href="https://thelegendofxero.bandcamp.com/">Bandcamp</a></li>
+            <li><a href="https://www.instagram.com/xeroforhire/">Instagram</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

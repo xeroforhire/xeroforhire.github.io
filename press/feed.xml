@@ -6,10 +6,18 @@
     <atom:link href="https://xeroforhire.com/press/feed.xml" rel="self" type="application/rss+xml" />
     <description>Official press releases and announcements from Jashae Slaughter (Xeroforhire) — writer, podcaster, musician, and founder of the Apocalyptiverse.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- NEWEST ITEM FIRST (sorted by pubDate). Add each new release as an <item> block directly below this line.
          The press-release generator outputs a ready-to-paste <item> for you. -->
+
+    <item>
+      <title>Harbinger: Legend of the Seven Brothers Opens for Pre-Order Ahead of October 27 Release</title>
+      <link>https://xeroforhire.com/press/pr-009.html</link>
+      <guid>https://xeroforhire.com/press/pr-009.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Apocalyptiverse has opened pre-orders for Harbinger: Legend of the Seven Brothers, Book 5 of Jashae K Slaughter's The Last Day series, co-written with Calla Rae. The standalone dark fantasy prequel follows seven demigod brothers in an ancient war against demon hordes, and the youngest, whom even the soldiers fear most. Releases October 27, 2026. Pre-order at apocalyptiverse.com/preorder.</description>
+    </item>
 
     <item>
       <title>The Last Day: Issue II Arrives August 4 — And Rivers City Is Already Open</title>
